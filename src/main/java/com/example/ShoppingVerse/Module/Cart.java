@@ -22,7 +22,7 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
-    int cartTotal;
+    int cartTotal = 0;
 
     @OneToOne
     @JoinColumn(referencedColumnName = "emailId")

@@ -33,7 +33,7 @@ public class Customer {
     Gender gender;
 
     @OneToOne(mappedBy = "customer",cascade = CascadeType.ALL)
-    Cart cart;
+    Cart cart = new Cart();
 
     @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
     List<Card> cards = new ArrayList<>();

@@ -1,5 +1,6 @@
 package com.example.ShoppingVerse.Service;
 
+import com.example.ShoppingVerse.Module.Cart;
 import com.example.ShoppingVerse.Module.Customer;
 import com.example.ShoppingVerse.Repository.CustomerRepository;
 import com.example.ShoppingVerse.dto.request.CustomerRequestDto;
@@ -16,7 +17,12 @@ public class CustomerService {
     CustomerRepository customerRepository;
     public CustomerResponceDto addCustomer(CustomerRequestDto customerRequestDto) {
 
-        Customer savedCustomer = customerRepository.save(CustomerTransformer.CustomerRequestToCustomer(customerRequestDto));
+        Customer customer = CustomerTransformer.CustomerRequestToCustomer(customerRequestDto);
+        Cart cart = new Cart();
+        cart.setCartTotal(0);
+        cart.setCustomer(customer);
+        customer.setCart(cart);
+        Customer savedCustomer = customerRepository.save(customer);
         return CustomerTransformer.CustomerToCustomerResponce(savedCustomer);
     }
 }
