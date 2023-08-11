@@ -1,4 +1,4 @@
-package com.example.ShoppingVerse.Repository;
+package com.example.ShoppingVerse.exception;
 
 public class ProductDosntExitsException extends RuntimeException{
 

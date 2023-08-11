@@ -1,8 +1,8 @@
 package com.example.ShoppingVerse.Controller;
 
 import com.example.ShoppingVerse.Module.Item;
-import com.example.ShoppingVerse.Repository.InsufficentQuantityException;
-import com.example.ShoppingVerse.Repository.ProductDosntExitsException;
+import com.example.ShoppingVerse.exception.InsufficentQuantityException;
+import com.example.ShoppingVerse.exception.ProductDosntExitsException;
 import com.example.ShoppingVerse.Service.CartService;
 import com.example.ShoppingVerse.Service.ItemService;
 import com.example.ShoppingVerse.dto.request.ItemRequestDto;
@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/cart")
