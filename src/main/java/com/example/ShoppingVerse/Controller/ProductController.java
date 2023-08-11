@@ -28,9 +28,5 @@ public class ProductController {
         }
     }
 
-    @GetMapping("/get_by_price_and_category")
-    public ResponseEntity getProdByPriceandCategory(@RequestParam("c")ProductCategory category, @RequestParam("p") int price){
-        List<ProductResponce> productResponceList= productService.getProdByPriceandCategory(category, price);
-        return new ResponseEntity(productResponceList, HttpStatus.FOUND);
-    }
+
 }
