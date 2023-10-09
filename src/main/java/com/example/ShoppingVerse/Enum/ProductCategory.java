@@ -6,5 +6,7 @@ public enum ProductCategory {
     FOOD,
     ELECTRONICS,
     LIFESTYLE,
-    KITCHEN
+    KITCHEN,
+    CLOTHING,
+    SHOES
 }

@@ -1,6 +1,7 @@
 package com.example.ShoppingVerse.Controller;
 
 import com.example.ShoppingVerse.Enum.ProductCategory;
+import com.example.ShoppingVerse.Service.FilterService;
 import com.example.ShoppingVerse.Service.ProductService;
 import com.example.ShoppingVerse.dto.responce.ProductResponce;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +18,10 @@ import java.util.List;
 @RequestMapping("/filters")
 public class FiltersController {
     @Autowired
-    ProductService productService;
+    FilterService filterService;
     @GetMapping("/get_by_price_and_category")
     public ResponseEntity getProdByPriceandCategory(@RequestParam("c") ProductCategory category, @RequestParam("p") int price){
-        List<ProductResponce> productResponceList= productService.getProdByPriceandCategory(category, price);
+        List<ProductResponce> productResponceList= filterService.getProdByPriceandCategory(category, price);
         return new ResponseEntity(productResponceList, HttpStatus.FOUND);
     }
 }
